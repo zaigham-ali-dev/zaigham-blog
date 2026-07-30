@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom Animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* X-Men Flying Animations */
+@keyframes xman-fly-1 {
+  0% { left: -150px; top: 10%; transform: rotate(10deg) scale(1) translateY(0); }
+  50% { top: 25%; transform: rotate(0deg) scale(1.1) translateY(20px); }
+  100% { left: 110%; top: 10%; transform: rotate(10deg) scale(1) translateY(0); }
+}
+
+@keyframes xman-fly-2 {
+  0% { left: 110%; top: 35%; transform: rotate(-10deg) scale(0.9) scaleX(-1); }
+  50% { top: 15%; transform: rotate(5deg) scale(1) scaleX(-1); }
+  100% { left: -150px; top: 35%; transform: rotate(-10deg) scale(0.9) scaleX(-1); }
+}
+
+@keyframes xman-fly-3 {
+  0% { left: -150px; top: 65%; transform: rotate(5deg) scale(1.2); }
+  50% { top: 80%; transform: rotate(-5deg) scale(1.1); }
+  100% { left: 110%; top: 65%; transform: rotate(5deg) scale(1.2); }
+}
+
+@keyframes xman-fly-4 {
+  0% { left: 110%; top: 85%; transform: rotate(-15deg) scale(0.8) scaleX(-1); }
+  50% { top: 65%; transform: rotate(0deg) scale(1) scaleX(-1); }
+  100% { left: -150px; top: 85%; transform: rotate(-15deg) scale(0.8) scaleX(-1); }
+}
+
+@keyframes xman-fly-5 {
+  0% { left: -150px; top: 45%; transform: rotate(-5deg) scale(1.3); }
+  50% { top: 30%; transform: rotate(15deg) scale(1.1); }
+  100% { left: 110%; top: 45%; transform: rotate(-5deg) scale(1.3); }
+}
+
+.animate-xman-1 {
+  position: absolute;
+  animation: xman-fly-1 12s ease-in-out infinite;
+  z-index: 50;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 15px rgba(234, 179, 8, 0.6)); /* Yellow for Wolverine */
+}
+
+.animate-xman-2 {
+  position: absolute;
+  animation: xman-fly-2 15s ease-in-out infinite;
+  z-index: 40;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 15px rgba(220, 38, 38, 0.6)); /* Red for Deadpool */
+}
+
+.animate-xman-3 {
+  position: absolute;
+  animation: xman-fly-3 18s ease-in-out infinite;
+  z-index: 45;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 15px rgba(147, 51, 234, 0.6)); /* Purple for Magneto */
+}
+
+.animate-xman-4 {
+  position: absolute;
+  animation: xman-fly-4 20s ease-in-out infinite;
+  z-index: 42;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 15px rgba(168, 162, 158, 0.6)); /* Gray/White for Storm */
+}
+
+.animate-xman-5 {
+  position: absolute;
+  animation: xman-fly-5 14s ease-in-out infinite;
+  z-index: 48;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 15px rgba(59, 130, 246, 0.6)); /* Blue for Cyclops */
+}
+
+/* Roaming Animations */
+@keyframes roam-1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20vw, 20vh) rotate(90deg) scale(1.1); }
+  50% { transform: translate(60vw, 5vh) rotate(180deg) scale(0.9); }
+  75% { transform: translate(30vw, -20vh) rotate(270deg) scale(1.2); }
+  100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+@keyframes roam-2 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  33% { transform: translate(-30vw, 30vh) rotate(-120deg) scale(1.2); }
+  66% { transform: translate(-10vw, 60vh) rotate(-240deg) scale(0.8); }
+  100% { transform: translate(0, 0) rotate(-360deg) scale(1); }
+}
+
+@keyframes roam-3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(40vw, -40vh) rotate(120deg) scale(1.3); }
+  66% { transform: translate(10vw, -10vh) rotate(240deg) scale(0.7); }
+  100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+.animate-roam-1 { animation: roam-1 45s linear infinite; }
+.animate-roam-2 { animation: roam-2 40s linear infinite; }
+.animate-roam-3 { animation: roam-3 35s linear infinite; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+.animate-fade-in-up, .animate-fade-in, .animate-scale-in {
+  opacity: 0;
+}
